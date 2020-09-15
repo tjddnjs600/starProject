@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+ <mapper namespace="TumblerMapper">
+  <insert id="add" parameterType="TumblerVO">
+    insert into st_tumbler values(#{ttotal}, #{tcontent}, #{timg}, #{tname}, #{tprice}, #{ttotal})
+  </insert>
+  <select id="list" parameterType="Criterion" resultType="TumblerVO">
+   SELECT tcontent, timg, tname 
+   FROM st_tumbler
+   order by tname desc limit #{startlist}, #{amount}
+  </select>
+  <select id="detail" parameterType="java.lang.String" resultType="TumblerVO">
+    select * from st_tumbler where tname = #{tname}
+  </select>
+  <update id="modify" parameterType="TumblerVO">
+    update st_tumbler set tcount = #{ttotal} + tcount, tcontent = #{tcontent}, timg = #{timg}, tname = #{tname}, tprice = #{tprice}, ttotal = #{ttotal} + ttotal 
+    where tname = #{tname}
+  </update>
+  
+  <update id="tamountMod" parameterType="java.util.HashMap">
+    update st_tumbler SET TCOUNT = TCOUNT - #{tamount} where tname = #{tname}
+  </update>
+  
+  <delete id="remove" parameterType="java.lang.String">
+    delete from st_tumbler where tname = #{tname}
+  </delete>
+    <select id="totalCount" parameterType="Criterion" resultType="java.lang.Integer">
+    select count(tname) from st_tumbler
+  </select>
+ </mapper>

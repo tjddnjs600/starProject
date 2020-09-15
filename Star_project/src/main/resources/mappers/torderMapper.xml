@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+ <mapper namespace="TorderMapper">
+  <insert id="torderInsert" parameterType="TorderVO">
+    insert into st_torder(tamount,name,addr,tel,email,tname,tallprice,tpay) values
+    (#{tamount},#{name},#{addr},#{tel},#{email},#{tname},#{tallprice},#{tpay})
+  </insert>
+  
+  <select id="torderList" parameterType="java.util.HashMap" resultType="TorderVO">
+    select tname, tallprice, tamount, tpay, tbuyday, email
+    from st_torder
+    where email = #{email}
+    order by tono desc limit #{cri.startlist}, #{cri.amount}
+  </select>
+  
+  <select id="torderTotalCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(tono) from st_torder where email = #{email}
+  </select>
+ </mapper>

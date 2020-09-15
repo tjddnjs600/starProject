@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="CbagMapper">
+    <insert id="cbadd" parameterType="CbagVO">
+      insert into st_cbag(email, cname, cprice, camount, csize, cimg, hc)
+      values(#{email}, #{cname}, #{cprice}, #{camount}, #{csize}, #{cimg}, #{hc})
+    </insert>
+    <select id="cblist" parameterType="java.lang.String" resultType="CbagVO">
+      select cname, cprice, camount, csize, cimg, cbagno, hc from st_cbag where email = #{email}
+    </select>
+    <select id="cplist" parameterType="java.lang.Integer" resultType="CbagVO">
+      select cname, cprice, csize, hc, cbagno from st_cbag where cbagno = #{cbagno}
+    </select>
+    <select id="cbdetail" parameterType="java.lang.Integer" resultType="CbagVO">
+      select email, cname, cprice, camount, csize, cbagno, cimg, hc from st_cbag where cbagno = #{cbagno}
+    </select>
+    <update id="cbmod" parameterType="CbagVO">
+      update st_cbag set cprice = #{cprice}, csize = #{csize}, hc = #{hc} where cbagno = #{cbagno} 
+    </update>
+    <delete id="cbdel" parameterType="java.lang.Integer">
+      delete from st_cbag where cbagno = #{cbagno}
+    </delete>
+    <delete id="cballdel" parameterType="java.lang.String">
+      delete from st_cbag where email = #{email}
+    </delete>
+ </mapper>
+ 

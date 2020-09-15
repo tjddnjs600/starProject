@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="GcardMapper">
+ <sql id="card">
+   where email = #{email} and gname = #{gname}
+ </sql>
+  <insert id="insert" parameterType="GcardVO">
+    insert into st_gcard(gnum,gname,email) values(#{gnum},#{gname},#{email})
+  </insert>
+  
+  <select id="cardList" parameterType="java.lang.String" resultType="GcardVO">
+    select gnum, gprice, gname from st_gcard where email = #{email}
+  </select>
+  
+  <select id="cardInfo" parameterType="GcardVO" resultType="GcardVO">
+     select gnum, gprice from st_gcard <include refid="card"/>
+  </select>
+  
+  <select id="nameList" parameterType="java.lang.String" resultType="GcardVO">
+    select gname from st_gcard where email = #{email}
+  </select>
+  
+  <update id="charge" parameterType="GcardVO">
+    update st_gcard set gprice = gprice + #{gprice}<include refid="card"/>
+  </update>
+  
+  <update id="gcardPay" parameterType="GcardVO">
+    update st_gcard set gprice = #{gprice}<include refid="card"/>
+  </update>
+  
+  <delete id="rmCard" parameterType="GcardVO">
+    delete st_gcard <include refid="card"/>
+  </delete>
+</mapper>

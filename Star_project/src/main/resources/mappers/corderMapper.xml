@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="CorderMapper">
+  <insert id="order" parameterType="CorderVO">
+    insert into st_corder(email, cname, camount, cprice, cpay, COUPON, csize, hc, addr, name, tel)
+    values (#{email},#{cname},#{camount},#{cprice}, #{cpay},#{coupon}, #{csize}, #{hc}, #{addr}, #{name}, #{tel})
+  </insert>  
+  <select id="list" parameterType="java.util.HashMap" resultType="CorderVO">
+    select cname, cprice, camount, cpay, cbuyday, email 
+    from st_corder
+    where email = #{email}
+    order by cono desc limit #{cri.startlist}, #{cri.amount}
+  </select>
+  <select id="corderTotalCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(cono) from st_corder where email = #{email}
+  </select>
+  
+  <delete id="cancel" parameterType="java.lang.Integer">
+    delete from st_corder where cono = #{cono}
+  </delete>
+</mapper>

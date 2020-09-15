@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+#coffee_visual {
+    height: auto;
+    padding-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+
+#coffee_visual img {
+    width: 300px;
+    vertical-align: top;
+    max-width: 100%;
+    
+}
+
+#coffee_visual p {
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #006633;
+    font-weight: bold;
+}
+
+#coAmount {
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+
+.gift_info_tbl tr{
+display: table-row;
+
+}
+
+.gift_info_tbl tr th {
+    background: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    color: #444;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 17px 20px;
+    vertical-align: middle;
+}
+
+
+#tbody{
+   display: table-row-group;
+   margin-top: 20px;
+}
+
+
+table.gift_info_tbl tr td {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 17px 20px;
+    font-size: 14px;
+}
+
+
+
+table.gift_info_tbl {
+    width: 100%;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+    text-align: left;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.custom-control-label {
+    color: #666;
+    float: left;
+    font-size: 14px;
+    margin-right: 12px;
+    
+}
+
+
+
+.gift_info_tbl tr td:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+
+#gift_info_send_btns {
+    height: 45px;
+    margin-top: 40px;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+#gift_info_send_btns ul {
+    height: 45px;
+    width: 200px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    
+}
+
+
+#gift_info_send_btns ul li {
+    float: left;
+    list-style: none;
+    margin-right: 5px;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+
+
+#payBtn{
+    background: #666;
+}
+
+#cbagBtn{
+   background: #222;
+}
+
+
+#gift_info_send_btns ul li a {
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    width: 84px;
+    text-decoration: none;
+    
+}
+
+#cbagmodBtn{
+   margin-top: 10px;
+   float:right;
+   background-color: #006633;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+}
+

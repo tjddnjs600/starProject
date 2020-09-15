@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="BoardMapper">
+  <sql id="sch">
+    <if test="type !=null">
+      <trim prefix=" and (" suffix=") ">
+        <choose>
+          <when test="type == 'twc'.toString()">
+            btitle like CONCAT ('%',#{keyword},'%') or
+            email like CONCAT ('%',#{keyword},'%') or
+            bcontent like CONCAT ('%',#{keyword},'%')
+          </when>
+          <when test="type == 'tw'.toString()">
+            btitle like CONCAT ('%',#{keyword},'%') or
+            email like CONCAT ('%',#{keyword},'%')
+          </when>
+          <when test="type == 'tc'.toString()">
+            btitle like CONCAT ('%',#{keyword},'%') or
+            bcontent like CONCAT ('%',#{keyword},'%')
+          </when>
+          <when test="type == 'wc'.toString()">
+            email like CONCAT ('%',#{keyword},'%') or
+            bcontent like CONCAT ('%',#{keyword},'%')
+          </when>
+          <when test="type == 't'.toString()">
+           btitle like CONCAT ('%',#{keyword},'%')
+          </when>
+          <when test="type == 'w'.toString()">
+           email like CONCAT ('%',#{keyword},'%')
+          </when>
+          <when test="type == 'c'.toString()">
+           bcontent like CONCAT ('%',#{keyword},'%')
+          </when>
+        </choose>
+      </trim>
+    </if>
+  </sql>
+ 
+ <insert id="write" parameterType="BoardVO">
+ insert into st_board(email, bcontent, b_file, noticenum, btitle)
+ values(#{email}, #{bcontent}, #{b_file},#{noticenum}, #{btitle})
+ </insert>
+ <select id="list" parameterType="Criterion" resultType="BoardVO">
+   <![CDATA[  
+    select bno, email, viewcount, bmodd8, bcontent, cmtcnt, b_file, btitle, noticenum
+    from st_board where bno > 0 
+   ]]>
+   <include refid="sch"/>
+   <![CDATA[ 
+    order by noticenum DESC, bno DESC limit #{startlist}, #{amount}
+   ]]>
+ </select>
+ <select id="detail" parameterType="java.lang.Integer" resultType="BoardVO">
+  select * from st_board where bno = #{bno}
+ </select>
+ <update id="modify" parameterType="BoardVO">
+  update st_board set bmodd8 = sysdate, bcontent = #{bcontent}, b_file = #{b_file}, btitle = #{btitle}
+  where bno = #{bno}
+ </update> 
+ <delete id="remove" parameterType="java.lang.Integer">
+  delete from st_board where bno = #{bno}
+ </delete>
+ <select id="totalCount" parameterType="Criterion" resultType="java.lang.Integer">
+   <![CDATA[  select count(bno) from st_board where bno > 0 ]]>
+  <include refid="sch"/>
+ </select>
+  <update id="viewCount" parameterType="java.lang.Integer">
+  update st_board set viewcount = viewcount +1 where bno = #{bno}
+ </update> 
+ </mapper>
+ 

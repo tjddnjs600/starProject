@@ -1,0 +1,113 @@
+@charset "UTF-8";
+/* login -s */
+#contain{width: 100%;}
+.login_bg_wrap{background: url(../../imgs/login_bg.jpg) center top no-repeat fixed #0a0807;
+    background-size: cover; -webkit-background-size: cover; width: 100%;
+}
+.member_wrap{max-width: 570px; margin: 0 auto; padding: 70px 0 50px;}
+.member_inner{}
+.new_login_ttl{color: #fff; display: block; font-size: 30px;
+    font-weight: normal; margin-bottom: 30px; text-align: center;
+}
+.joinform{border: 1px solid #ddd; border-radius: 3px; box-sizing: border-box;
+    max-width: 570px; margin: 0 auto 30px; position: relative;
+}
+.form_txt{background: #fff; border-bottom: 1px solid #ddd; color: #777; margin:0;
+    font-size: 18px; line-height: 24px; text-align: center; padding: 30px 20px 30px;
+}
+.renew_input_box{background: #fff; border-bottom: 1px solid #ddd;
+    padding: 20px 20px; position: relative;
+}
+.renew_input_box input{border: 1px solid #ddd; border-radius: 3px;
+    box-sizing: border-box; display: inline-block;  max-width: 530px;
+    padding: 15px; width: 100%;
+}
+.mb10{margin-bottom: 10px}
+.pwd_input{margin-bottom: 30px}
+.btn_member_login{background: #006633; border-radius: 3px; text-align: center; max-width: 570px;}
+.btn_login{font-size: 24px; display: block; line-height: 65px; color: #fff;}
+.btn_login:hover{color: #fff;}
+.warn_text{font-size: 14px; line-height: 1.4; margin-top: 15px; color: #006633}
+.login_btn_wrap{background: #fff; box-sizing: border-box; max-width: 570px;}
+.login_btn_wrap ul{display: table; text-align: center; width: 100%; list-style: none; margin: 0}
+.login_btn_wrap li{box-sizing: border-box; float: left; position: relative; vertical-align: top; width: 33.3%;}
+.login_btn_wrap a{color: #666; display: block; font-size: 16px; height: 100%; line-height: 54px; width: 100%;}
+.login_btn_wrap a:hover{color: #666;}
+.login_btn_wrap li:after{border-right: 1px solid #ddd; color: #666; content: "";
+    height: 22px; margin-top: -11px; position: absolute; right: -1px; top: 50%;
+}
+
+
+/* join-s */
+.member_join_wrap{max-width: 570px; margin: 0 auto; padding: 70px 0 50px;}
+.member_join_ttl{display: block; font-size: 30px; font-weight: normal;
+    margin-bottom: 30px; text-align: center;
+}
+.renew_joinform_v2{border: 1px solid #ddd; border-radius: 3px; box-sizing: border-box;
+    max-width: 570px; margin: 0 auto 30px; position: relative;
+}
+.find_mem_sally{margin: 30px auto 0 auto; text-align: center; padding: 30px 20px 0;
+    background: url(../../imgs/icon_find_sally.png) 50% 100% no-repeat;
+    width: 205px; height: 182px;
+}
+.find_form_txt{background: #fff; border-bottom: 1px solid #ddd;
+    color: #777; font-size: 18px; line-height: 24px; text-align: center;
+    padding: 30px 20px 30px;
+}
+.renew_input_box{background: #fff; border-bottom: 1px solid #ddd; padding: 20px 20px; position: relative;}
+.renew_input_box input{border: 1px solid #ddd; border-radius: 3px; box-sizing: border-box;
+    display: inline-block; width: 100%; max-width: 530px;}
+.input_warn_text{font-size: 14px; line-height: 1.4; margin-top: 15px;}
+.renew_input_box strong{color: #222; display: block; font-size: 18px; margin-bottom: 10px;}
+.nofix_name{float: left; background: #fff; border: 1px solid #ddd;
+    box-sizing: border-box; border-radius: 3px; font-size: 14px; padding: 15px;
+}
+
+#schBtn{width: 100px; height: 38px; padding: 0; border: 1px solid #ddd; position: absolute; top: 15px; right: 20px;}
+
+#name{width: 265px; }
+.radioBt{position: relative; width: 50px;}
+.radioinner{margin-left: 10px}
+.rval{position: absolute; top: 0; left: 40px}
+.mem_agreement_wrap{margin: 20px; margin-bottom: 30px; position: relative;
+    overflow: hidden; padding: 3px 0;
+}
+.mem_agreement_wrap h5{font-size: 18px; color: #222; font-weight: bold; margin-bottom: 20px;}
+#check{width:50px; position: absolute; top: 5px; right: 50px; display: inline-block;}
+
+.mem_purpose_area{background: #f7f7f7; box-sizing: border-box; color: #666 !important;
+    height: 170px; width: 100%;
+}
+.mCustomScrollBox{position: relative; overflow: hidden; height: 100%;
+    max-width: 100%; outline: none; direction: ltr; border: 1px solid #ddd;
+    border-radius: 3px; padding: 15px
+}
+.mCustomScrollBox p{font-size: 14px; color: #444444; line-height: 1.6;}
+.strongP{font-size: 14px; color: #444444; line-height: 1.6; font-weight: bold;
+  text-decoration: underline;
+}
+.join_txt2{color: #666; line-height: 1.4; margin-bottom: 15px; font-size: 14px;
+    margin-top: 15px; letter-spacing: -1px; text-align: center;
+}
+.btn_member_login{background: #006633; border-radius: 3px; margin-top: 25px;
+    text-align: center; margin: 0 20px; max-width: 570px;
+}
+.btn_member_login a{color: #fff; font-size: 24px; display: block; line-height: 65px;}
+.btn_member_login a:hover{color: #fff;}
+.readInput{background: #f4f4f2;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

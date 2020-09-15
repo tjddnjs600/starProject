@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="CoffeeMapper">
+  <insert id="insert" parameterType="CoffeeVO">
+   insert into st_coffee(cname, cprice, ccontent, cimg, ctotalcount, category, hc)
+   values(#{cname}, #{cprice}, #{ccontent}, #{cimg}, 0, #{category}, #{hc})
+  </insert>
+  <select id="clist" parameterType="java.lang.String" resultType="CoffeeVO">
+   select cname, cimg from st_coffee where category = #{category}
+  </select>
+  <select id="cdetail" parameterType="java.lang.String" resultType="CoffeeVO">
+   select cname, cprice, ccontent, cimg, ctotalcount, category, hc from st_coffee where cname = #{cname}
+  </select>
+  <select id="alllist" resultType="CoffeeVO">
+    select cname, cimg from st_coffee
+  </select>
+  <update id="cupdate" parameterType="CoffeeVO">
+    update st_coffee set cname = #{cname}, cprice = #{cprice}, ccontent = #{ccontent},
+    cimg = #{cimg}, category = #{category}, hc = #{hc} where cname = #{cname}
+  </update>
+  <delete id="cdelete" parameterType="java.lang.String">
+    delete from st_coffee where cname = #{cname}
+  </delete>
+  <update id="ctotalcount">
+    
+  </update>
+ </mapper>
+ 

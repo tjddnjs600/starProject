@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+
+<sql id="mem">
+    from st_member where email = #{email}
+</sql>
+
+  <insert id="join" parameterType="MemberVO">
+    insert into st_member(email, pwd, nick, birth, gender, addr, tel, name)
+    values(#{email},#{pwd},#{nick},#{birth},#{gender},#{addr},#{tel},#{name})
+  </insert>
+  
+  <select id="check" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(email) <include refid="mem"/>
+  </select>
+  
+  <select id="login" parameterType="MemberVO" resultType="MemberVO">
+    select * <include refid="mem"/> and pwd = #{pwd}
+  </select>
+  
+  <select id="mlist" parameterType="Criterion" resultType="MemberVO">
+  <![CDATA[ 
+	  select email, name, nick, regd8, grade 
+    from st_member 
+    where grade < 100 
+    order by email desc limit #{startlist}, #{amount}
+  ]]>
+  </select>
+
+  <select id="minfo" parameterType="java.lang.String" resultType="MemberVO">
+   select * <include refid="mem"/>
+  </select>
+  
+  <select id="selCou" parameterType="java.lang.String" resultType="java.lang.Integer">
+   select coupon from st_member where email = #{email}
+  </select>
+  
+   <select id="torder" parameterType="java.lang.String" resultType="MemberVO">
+   select addr, tel, name <include refid="mem"/>
+  </select>
+  
+   <select id="totalmInfo" resultType="java.lang.Integer">
+   select count(email) from st_member
+   </select>
+  
+  <update id="modify" parameterType="MemberVO">
+    update st_member set nick = #{nick}, birth = #{birth}, addr = #{addr}, tel = #{tel} where email = #{email}
+  </update>
+  
+  <update id="modPwd" parameterType="MemberVO">
+    update st_member set pwd = #{pwd} where email = #{email}
+  </update>
+  
+  <update id="upCou" parameterType="MemberVO">
+    update st_member set coupon = coupon + 1 where email = #{email}
+  </update>
+  
+  <update id="useCou" parameterType="MemberVO">
+    update st_member set coupon = coupon - 1 where email = #{email}
+  </update>
+  
+  <update id="upPoint" parameterType="MemberVO">
+    update st_member set SRATRCOUNT = SRATRCOUNT + 1 where email = #{email}
+  </update>
+  
+  <update id="upGrade" parameterType="java.lang.String">
+    UPDATE st_member SET GRADE = CASE WHEN SRATRCOUNT >= 25 THEN 50 ELSE GRADE END,
+    SRATRCOUNT = CASE WHEN SRATRCOUNT >= 25 THEN 0 ELSE SRATRCOUNT END 
+    WHERE email = #{email}
+  </update>
+  
+  <update id="upGradeCouponPoint" parameterType="java.lang.String">
+    UPDATE st_member SET SRATRCOUNT = CASE WHEN SRATRCOUNT >= 12 THEN 0 ELSE SRATRCOUNT END,
+    COUPON = CASE WHEN SRATRCOUNT >= 12 THEN COUPON + 1 ELSE COUPON END
+    WHERE GRADE = 50 and email = #{email}
+  </update>
+  
+  <delete id="resign" parameterType="java.lang.String">
+    delete <include refid="mem"/>
+  </delete>
+</mapper>

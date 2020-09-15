@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+
+.boardcontain {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.boardcontain {
+   width : 1100px;
+   margin : 0 auto;
+}
+
+.page_board {
+  width: 480px;
+   margin: 0 auto;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a:hover:not(.active) {color: #0d5f34;}
+
+.pagination a.active {
+  font-weight: bold;
+  color: #0d5f34;
+  border-bottom: 1px solid #0d5f34;
+}
+.ms_cont{
+   width: 100%;
+   margin: 0 auto;
+   
+}
+.board_search{
+  margin:10px auto;
+}

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+.tpay_container{
+   width : 1100px; 
+   margin: 0 auto 100px auto;
+   position: relative;
+}
+
+#tpayTop {
+   font-size: 14px;
+  text-align: center;
+  display: table-row;
+  background: none;
+}
+
+#tpayTop th{
+  border-top: 1px solid #333;   
+  border-bottom: 1px solid #333; 
+}
+
+#pay_title{
+    padding-bottom: 30px;
+    display: block;
+}
+
+#pay_title h5{
+    display: block;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.tpay_table {
+  display: block;
+  width: 1200px;   
+}
+
+
+.name, .tel, .addr, .method{
+   width: 200px;
+   font-size: 14px;
+  text-align: center;
+  display: table-row;
+  background: none;
+   border-left: 0;
+   padding: 11px 0 10px 18px;
+  border: 1px solid #f0f0f0;
+  border-bottom-width: 0;
+  color: #353535;
+  text-align: center;
+  background-color: #f4f4f2;;
+  display: table-cell;
+}
+
+.tpayBtn {
+   width: 100px;
+   float: right;
+   height:30px;
+   line-height:30px;
+   color: #fff;
+   background: #007042;
+   text-align: center;
+   font-weight: normal;
+   font-size: 14px;
+   text-decoration: none;
+   border-radius: 3px;
+}
+
+.tpayBtn:hover {color: #fff;}

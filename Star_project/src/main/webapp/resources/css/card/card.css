@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/* 카드 등록 */
+.card_info_wrap header{position: relative; height: 40px;}
+.card_info_wrap header h5{color: #222; float: left; font-size: 18px; font-weight: bold;}
+.card_regi_tbl{border-bottom: 1px solid #222; border-top: 1px solid #222; margin-top: 10px;}
+.card_regi_dl{border-bottom: 1px solid #e0e0e0; height: 48px; line-height: 30px; margin: 0; position: relative;}
+.card_regi_dl dt{background: #f4f4f2; color: #222; font-weight: bold; width: 27.096%; float: left;
+    font-size: 14px; padding: 9px 0 9px 2%; height: 47px;
+}
+.info_inner p{margin: 0; color: #222;}
+.card_regi_dl dd{color: #ccc; width: 68.904%; float: left; font-size: 14px; margin: 0;
+    padding: 9px 0 9px 2%;}
+.card_regi_input1{margin-right: 7px; width: 300px; border: 1px solid #ddd;
+    border-radius: 3px; color: #666; float: left; height: 26px; padding-left: 5px
+}
+.card_info_inner{height: 30px; margin-top: 20px; position: relative;}
+.card_info_inner ul{bottom: 0; height: 30px; position: absolute; right: 0; width: 177px; list-style: none;}
+.card_info_inner li{border-radius: 3px; float: left; height: 28px; width: 84px;}
+.card_info_inner li  a{text-decoration: none; display: block; font-size: 12px; font-weight: bold;
+    height: 28px; line-height: 28px; text-align: center; width: 85px;
+}
+.card_regi_btn1{background: #e2c383; border: 1px solid #bb9f65;}
+#cSubmitBt, #listBt{color: #222;}
+.card_regi_btn2{background: #222; border: 1px solid #222; color: #fff; margin-left: 5px;}
+#resetBt, #mRmBt{color: #fff;}
+#rm{width: 95px;}
+#rm a{width: 95px;}
+#infoBtn{width: 187px}
+
+
+/* mycard */
+.my_index_slide{border-radius: 3px; height: 597px; width: 828px; position: relative;}
+.my_index_slide header{display: block; height: 76px; position: absolute; text-align: center; top: 50px; width: 828px; z-index: 7;}
+.userName{color: #222; font-size: 24px; margin: 10px auto;}
+.my_slide_wrap{height: 597px; position: relative; width: 828px; display: block;}
+.my_slider{background: #f6f5ef; height: 584px; width: 828px;}
+.swiper-container{border-radius: 3px; position: relative; width: 828px; 
+      margin: 0 auto; backface-visibility: hidden; z-index: 1; height: 524px; padding-top: 60px;
+}
+.card-actions{z-index:-1; display: block; border-bottom: 1px solid #626260; background: #f6f5ef; height: 483px; left: 0; position: absolute; top: 0; width: 828px;}
+.swiper_img{margin-top: 90px; width: 305px !important; margin: 0 auto; margin-top: 90px;}
+.swiper_img img{vertical-align: top; max-width: 100%;}
+.my_slider_txt{height: 70px; position: absolute; top: 495px; width: 100%;}
+.my_slider_txt_l{background: url(../../imgs/my_ms_slider_sep.gif) right center no-repeat; float: left;
+    height: 70px; padding: 10px 0 0 3%; width: 47%;
+}
+.my_slider_txt_l p{color: #555; float: left; font-size: 18px; font-weight: bold; margin: 10px 0 0; text-align: left; width: 100%;}
+.my_slider_txt_r{color: #222; font-size: 16px; float: left; font-weight: bold; height: 70px;
+    line-height: 70px; position: relative; text-align: left; width: 50%; padding-left: 15px
+}
+.my_slider_txt_r .en{color: #006541; font-size: 26px;}
+.my_card_btns{list-style:none; height: 30px; position: absolute; right: 3%; top: 5px; width: 178px; margin-top: 19px; text-align: center;}
+.card_charge_btn{background: #e2c383; border: 1px solid #bb9f65; border-radius: 3px;
+    float: left; height: 28px; width: 81px;
+}
+.card_charge_btn a{text-decoration: none; display: block; font-size: 12px; height: 28px; line-height: 28px; text-align: center;
+    text-indent: 0; width: 85px; color: #222;
+}
+.card_charge_btn a:hover{color: #222;}
+
+
+/* charge */
+.card_charge_wrap{position: relative; display: block;}
+.card_charge_wrap h4{color: #222; font-size: 18px;}
+.card_charge_wrap article{padding-top: 70px}
+.card_charge_wrap article table{border-top: 1px solid #333;}
+.card_charge_wrap article table th{width: 200px; background: #f4f4f2; color: #222; line-height: 18px; font-size: 14px;
+    border-bottom: 1px solid #e0e0e0; height: 25px; padding: 9px 0 9px 20px; text-align: left; vertical-align: middle;
+}
+.card_charge_wrap article table td{width: 630px; background: #fff; color: #666; font-size: 14px; border-bottom: 1px solid #e0e0e0;
+    height: 25px; padding: 9px 0 9px 20px; text-align: left;
+}
+.sel_wrap{height: 28px; position: relative; width: 100%;}
+.user_sel_wrap{border: 1px solid #ddd; border-radius: 3px; float: left; height: 26px;
+    margin: 0; width: 240px; margin-bottom: 10px;
+}
+.user_card_wrap{display: table; height: 125px; margin-top: 20px;
+    margin-bottom: 20px; width: 590px;
+}
+.user_card_wrap figure{float: left; height: 125px; margin-right: -93px; width: 206px; position: relative; display: block;}
+.user_card_wrap figure img{width: 100%;}
+.user_card_wrap p{display: table-cell; vertical-align: middle; float: right; width: 364px; line-height: 1.4;}
+.user_card_wrap p strong{color: #444; font-size: 18px;}
+.cp{color: #006633; font-weight: bold;}
+#gpriceSel{box-sizing: border-box; width: 90px; height: 28px; padding: 10px 30px 10px 8px;
+    border: 1px solid #dddddd; border-radius: 2px; font-size: 12px; letter-spacing: -0.05em;
+    background: url(../../imgs/charge_price_bg.gif) 90% center no-repeat; margin-top: 2px;
+ }
+.charge_tbl_btns{list-style: none; float: right; height: 30px; margin-top: 20px; width: 185px;}
+.charge_tbl_btn1{background: #e2c383; border: 1px solid #bb9f65; border-radius: 3px; float: right; height: 28px; width: 83px;}
+#cahrgeBt, #rmCardBt, #trCardBt{color: #222; display: block; font-size: 12px; font-weight: bold; height: 28px; line-height: 28px; text-align: center; width: 83px;}    
+#cahrgeBt:hover{color: #222;}    
+#rmCardBt:hover{color: #222;}  
+#trCardBt:hover{color: #222;}
+
+
+
+
+
+
